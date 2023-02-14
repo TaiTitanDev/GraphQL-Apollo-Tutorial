@@ -1,8 +1,10 @@
 const resolvers = {
 	// QUERY
 	Query: {
+		// { mongoDataMethods } => context.mongoDataMethods.
 		books: async (parent, args, { mongoDataMethods }) =>
 			await mongoDataMethods.getAllBooks(),
+		//  { id } => args.id.
 		book: async (parent, { id }, { mongoDataMethods }) =>
 			await mongoDataMethods.getBookById(id),
 

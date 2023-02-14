@@ -11,9 +11,12 @@ const resolvers = require('./resolver/resolver')
 const mongoDataMethods = require('./data/db')
 
 // Connect to MongoDB
+
+const MONGODB_URL = "mongodb+srv://admin:Jb7RTuN4tg8tlCWu@cluster0.cvnhjvr.mongodb.net/?retryWrites=true&w=majority";
+
 const connectDB = async () => {
 	try {
-		await mongoose.connect(process.env.MONGODB_URL, {
+		await mongoose.connect(MONGODB_URL, {
 			useCreateIndex: true,
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
